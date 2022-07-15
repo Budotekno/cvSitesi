@@ -1,0 +1,27 @@
+﻿@using cv.Models.Siniflar
+@model List<Hakkimda>
+
+<table class="table table-striped">
+    <tr>
+        <th>Hakkımda Fotoğraf</th>
+        <th>Hakkımda Yazı</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td><img src="@i.HakkimdaFotoUrl" width="100" height="100"  /></td>
+            <td>@i.HakkimdaYazi</td>
+            <td><a href="/Admin/HakkimdaGuncelleSayfasi/@i.Id/" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+
+
+    }
+
+
+</table>
+
+

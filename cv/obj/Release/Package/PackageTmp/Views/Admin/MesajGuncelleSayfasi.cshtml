@@ -1,0 +1,42 @@
+﻿@using cv.Models.Siniflar
+@model List<Mesaj>
+
+
+@{
+    ViewBag.Title = "MesajGuncelleSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mesaj Güncelle Sayfası</h2>
+
+<br />
+
+<form action="/Admin/MesajGuncelle/" method="post">
+
+    @foreach (var i in Model)
+    {
+       
+        <input type="hidden" name="Id" class="form-control" value="@i.Id" />
+        <br />
+
+        <label>İsim</label>
+        <input type="text" name="Isim" class="form-control" value="@i.Isim" />
+        <br />
+
+        <label>Mail</label>
+        <input type="text" name="Mail" class="form-control" value="@i.Mail" />
+        <br />
+
+        <label>Mesaj</label>
+        <textarea rows="4" name="Konu" class="form-control">@i.Konu</textarea>
+        <br />
+
+        <button class="btn btn-success">Güncelle</button>
+
+    }
+
+
+
+</form>
+
+

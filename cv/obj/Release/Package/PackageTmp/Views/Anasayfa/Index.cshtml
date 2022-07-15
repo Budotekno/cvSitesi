@@ -1,0 +1,75 @@
+﻿
+@using cv.Models.Siniflar
+@model List<Hakkimda>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+
+<div class="resp-tabs-container hor_1">
+    <div class="agileits_main_grid_right_grid">
+
+
+        <div class="wthree_main_grid_right_grid">
+            <h3>Hakkımda</h3>
+        </div>
+            
+
+            <p class="agileinfo_para">
+
+                @foreach (var i in Model)
+                {
+                    <img src="@i.HakkimdaFotoUrl" width="600" height="200" alt=" " />
+
+
+                    <i>
+                        @i.HakkimdaYazi
+                    </i>
+
+                }
+
+
+
+
+
+            </p>
+
+            <!--
+        <div class="wthree_tab_grid_sub">
+            <div class="wthree_tab_grid_sub_left">
+                <h5>321</h5>
+                <p>Tweets</p>
+            </div>
+            <div class="wthree_tab_grid_sub_left">
+                <h5>213</h5>
+                <p>Followers</p>
+            </div>
+            <div class="wthree_tab_grid_sub_left">
+                <h5>123</h5>
+                <p>Following</p>
+            </div>
+            <div class="clear"> </div>
+        </div>
+
+
+        -->
+            <br /><br />
+
+            <div class="agileits_skills">
+                <h3>Yeteneklerim</h3>
+                <div class="w3_agileits_skills_grid">
+                    <ul>
+                        @Html.Action("Yeteneklerim", "Anasayfa")
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>

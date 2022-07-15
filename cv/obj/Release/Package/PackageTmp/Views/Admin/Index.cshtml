@@ -1,0 +1,47 @@
+﻿@using cv.Models.Siniflar
+@model List<Anasayfa>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Profil</h2>
+@Html.Action("Profil","Admin")
+
+<br />
+
+<h2>Hakkımda</h2>
+
+@Html.Action("Hakkimda", "Admin")
+
+<h2>Yeteneklerim</h2>
+ 
+<a href="/Admin/YetenekEkleSayfasi/" class="btn btn-warning">Yetenek Ekle</a> <br /> <br />
+
+<table class="table table-striped">
+    <tr>
+        <th>Yetenek Adı</th>
+        <th>Yetenek Değeri</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.YetenekIsim</td>
+            <td> @i.YetenekDeger</td>
+            <td><a href="/Admin/YetenekSil/@i.Id/" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/YetenekGuncelleSayfasi/@i.Id/" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+
+
+    }
+
+
+</table>
+

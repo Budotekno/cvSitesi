@@ -1,0 +1,27 @@
+﻿@model cv.Models.Siniflar.Anasayfa
+
+@{
+    ViewBag.Title = "GuncelleSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Güncelle Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("YetenekGuncelle", "Admin", FormMethod.Post))
+{
+    <label>Yetenek No</label>
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.YetenekIsim, new { @class = "form-control" })
+
+    <br />
+    <label>Yetenek Değeri</label>
+    @Html.TextBoxFor(x => x.YetenekDeger, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+}
+
+

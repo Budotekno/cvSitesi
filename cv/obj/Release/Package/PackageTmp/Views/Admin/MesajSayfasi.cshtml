@@ -1,0 +1,26 @@
+﻿@using cv.Models.Siniflar
+@model List<Mesaj>
+
+<h3>Mesajlar</h3> <br />
+<table class="table table-striped" >
+    <tr>
+        <th>İsim</th>
+        <th>Mail</th>
+        <th>Mesaj</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Isim</td>
+            <td>@i.Mail</td>
+            <td>@i.Konu</td>
+            <td><a href="/Admin/MesajSil/@i.Id/" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/MesajGuncelleSayfasi/@i.Id/" class="btn btn-success">Güncelle</a></td>
+        </tr>
+
+    }
+
+</table>

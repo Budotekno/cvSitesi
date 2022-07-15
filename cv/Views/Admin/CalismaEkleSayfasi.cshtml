@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "CalismaEkleSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Çalışma Ekle Sayfası</h2>
+<br />
+
+<form action="/Admin/CalismaEkle/" method="post">
+    <label>Fotoğraf Url</label>
+    <input type="text"  name="FotoUrl" class="form-control"/>
+    <br />
+    <button class="btn btn-success">Ekle</button>
+</form>

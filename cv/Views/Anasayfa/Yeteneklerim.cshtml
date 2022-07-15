@@ -1,0 +1,9 @@
+﻿@using cv.Models.Siniflar
+@model List<Anasayfa>
+
+
+@foreach (var i in Model)
+{
+    <li><label>@i.YetenekIsim </label> <span></span> @i.YetenekDeger %</li>
+
+}

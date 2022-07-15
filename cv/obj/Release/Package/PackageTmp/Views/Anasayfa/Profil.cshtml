@@ -1,0 +1,16 @@
+﻿@using cv.Models.Siniflar
+@model List<Profil>
+
+
+@foreach (var i in Model)
+{
+    <h2>@i.ProfilAd</h2>
+    <p>@i.Unvan</p>
+    <div class="w3l_figure">
+        <img src="@i.FotoUrl" width="200" height="200   " alt=" " />
+    </div>
+
+}
+
+
+

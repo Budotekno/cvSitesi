@@ -1,0 +1,25 @@
+﻿@model cv.Models.Siniflar.Calismalarim
+
+
+@{
+    ViewBag.Title = "CalismaGuncelleSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Çalışma Güncelleme Sayfası</h2>
+
+<br />
+
+@using (Html.BeginForm("CalismaGuncelle", "Admin", FormMethod.Post))
+{
+    <label>Fotoğraf No</label>
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    <label>Fotoğraf Url</label>
+    @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+}
+
+

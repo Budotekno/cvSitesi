@@ -1,0 +1,26 @@
+﻿
+
+@{
+    ViewBag.Title = "YetenekEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek Ekle</h2> <br /><br />
+
+<form action="/Admin/YetenekEkle/" class="form-group" method="post">
+
+    <h4>Yetenek Adı</h4>
+    <input type="text" name="YetenekIsim"  class="form-control"/> <br />
+
+    <h4>Yetenek Değeri</h4>
+    <input type="number" name="YetenekDeger"  value="0" class="form-control"/>
+    <br />
+    <!--Durum bilgisini otomatik atamış olduk-->
+    <input type="hidden" name="YetenekDurum"  value="True" class="form-control"/>
+
+
+    <button class="btn btn-warning" >Ekle</button>
+    
+
+</form>
+

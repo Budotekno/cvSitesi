@@ -1,0 +1,43 @@
+﻿@using cv.Models.Siniflar
+@model List<Iletisim>
+
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İletişim</h2>
+<br />
+
+<h3>İletişim Bilgisi</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Telefon</th>
+        <th>Mail</th>
+        <th>Adres</th>
+        <th>Konum Url</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Tel</td>
+            <td>@i.Mail</td>
+            <td>@i.AdresAdi</td>
+            <td>@i.KonumLink.Substring(0,50) ...</td>
+           
+            <td><a href="/Admin/IletisimGuncelleSayfasi/@i.Id/" class="btn btn-success">Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+
+@Html.Action("MesajSayfasi","Admin")
+
+
+
+
+
+
+

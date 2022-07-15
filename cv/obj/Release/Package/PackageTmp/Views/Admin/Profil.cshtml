@@ -1,0 +1,23 @@
+﻿@using cv.Models.Siniflar
+@model List<Profil>
+
+<table class="table table-striped">
+    <tr>
+        <th>Profil</th>
+        <th>Profil Adı</th>
+        <th>Ünvan</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td><img src="@i.FotoUrl"  width="100" height="100" /></td>
+            <td>@i.ProfilAd</td>
+            <td>@i.Unvan</td>
+            <td><a class="btn btn-success" href="/Admin/ProfilGuncelleSayfasi/@i.Id/">Güncelle</a></td>
+        </tr>
+
+    }
+</table>

@@ -1,0 +1,35 @@
+﻿
+@using cv.Models.Siniflar
+@model List<Profil>
+
+@{
+    ViewBag.Title = "ProfilGuncelleSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Profil Güncelle Sayfası</h2>
+
+
+<form action="/Admin/ProfilGuncelle/" method="post">
+
+    @foreach (var i in Model)
+    {
+  
+        <input type="hidden" name="Id" value="@i.Id" class="form-control" /> <br />
+
+        <label>Profil Adı</label>
+        <input type="text" name="ProfilAd" value="@i.ProfilAd" class="form-control" /> <br />
+
+        <label>Ünvan</label>
+        <input type="text" name="Unvan" value="@i.Unvan" class="form-control" /> <br />
+
+        <label>Profil Url</label>
+        <input type="text" name="FotoUrl" value="@i.FotoUrl" class="form-control" /> <br />
+
+        <button class="btn btn-success">Güncelle</button>
+
+    }
+
+
+</form>
+

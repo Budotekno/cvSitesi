@@ -1,0 +1,27 @@
+﻿@model cv.Models.Siniflar.Hakkimda
+
+
+@{
+    ViewBag.Title = "HakkimdaGuncelleSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Guncelle Sayfası</h2>
+<br />
+@using (Html.BeginForm("HakkimdaGuncelle", "Admin", FormMethod.Post))
+{
+    <label>Hakkımda No</label>
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Hakkımda Fotoğraf Url</label>
+    @Html.TextBoxFor(x => x.HakkimdaFotoUrl, new { @class = "form-control" })
+
+    <br />
+
+    <label>Hakkımda Yazısı</label>
+    @Html.TextAreaFor(x => x.HakkimdaYazi, 6, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
+

@@ -1,0 +1,34 @@
+﻿@using cv.Models.Siniflar
+@model List<Calismalarim>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+
+
+
+<div class="wthree_main_grid_right_grid">
+    <h3>Popüler Çalışmalarım</h3>
+
+
+    <div class="w3_agileits_main_grid_work_grids" style="margin-left:42px;">
+
+        @foreach (var i in Model)
+        {
+            <div class="agile_main_grid_work_gridl">
+                <a href="@i.FotoUrl" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
+                    <img src="@i.FotoUrl" alt=" " />
+                </a>
+            </div>
+
+        }
+
+
+     
+        <div class="clear"> </div>
+    </div>
+</div>
+

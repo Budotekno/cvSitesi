@@ -1,0 +1,43 @@
+﻿@using cv.Models.Siniflar
+@model List<Calismalarim>
+
+
+@{
+    ViewBag.Title = "Calısmalarim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Çalışmalarım</h2>
+
+<a href="/Admin/CalismaEkleSayfasi" class="btn btn-warning">Ekle</a>
+
+<br />
+<br />
+
+<table class="table table-striped">
+    <tr>
+        <th>Fotoğraflar</th>
+        <th>Popüler Fotoğraflar</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Seç</th>
+
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td><img src="@i.FotoUrl"  width="100" height="100"/></td>
+            <td>@i.PopulerFoto</td>
+            <td><a href="/Admin/CalismaSil/@i.Id/" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/CalismaGuncelleSayfasi/@i.Id/" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Admin/CalismaSec/@i.Id/" class="btn btn-default">Seç</a></td>
+
+        </tr>
+
+
+    }
+
+
+</table>
+

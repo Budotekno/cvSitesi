@@ -1,0 +1,79 @@
+﻿@using cv.Models.Siniflar
+@model List<Iletisim>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<div class="wthree_main_grid_right_grid">
+    <h3>İletişim</h3>
+    <form action="/Iletisim/MesajGonder/" method="post">
+        <div class="agileits_w3layouts_contact_left">
+
+            <style>
+                .lbl{
+                    font-size:20px;
+                    
+                }
+
+            </style>
+
+            <label class="lbl">İsim</label>
+            <input type="text" name="Isim" required placeholder="İsim" style="width:450px; margin-top:10px; margin-bottom:15px;" >
+
+            <label class="lbl">Mail</label>
+            <input type="email" name="Mail" required style="width: 450px;" placeholder="Mail" >
+
+            <label class="lbl">Mesaj</label>
+            <textarea placeholder="Mesaj..." required style="margin-top: 10px; width: 450px;" name="Konu"></textarea>
+        </div>
+       
+        <div class="clear"> </div>
+        <div class="agile_submit">
+            
+            <button class="btn btn-success">Gönder</button>
+        </div>
+    </form>
+
+
+
+   
+
+
+    <div class="wthree_tab_grid">
+
+
+
+        @foreach (var i in Model)
+        {
+
+            <div style="margin: 30px 0 30px 0; ">
+                <iframe src="@i.KonumLink"
+                        style="border-radius: 10px; box-shadow: 2px 2px 15px #000000; width: 480px; height: 220px; "></iframe>
+            </div>
+
+            <ul class="wthree_tab_grid_list">
+                <li><i class="fa fa-mobile" aria-hidden="true"></i></li>
+                <li>Telefon<span>@i.Tel</span></li>
+            </ul>
+            <ul class="wthree_tab_grid_list">
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
+                <li>Mail<span>@i.Mail</span></li>
+            </ul>
+            <ul class="wthree_tab_grid_list">
+                <li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
+                <li>Adres<span>@i.AdresAdi</span></li>
+            </ul>
+
+        }
+
+
+
+        <div class="clear"> </div>
+    </div>
+</div>
+
+
